@@ -1,13 +1,13 @@
 [
   {"nr": "1",
-    "Lesson": "English",
+    "Lesson": "En",
     "Location": "201",
-    "Homework": "HW",
-    "Attended": "true"
+    "Homework": "HW-Finished",
+    "Attended": "false"
     },
     {"nr": "2",
-      "Lesson": "French",
-      "Location": "201",
+      "Lesson": "Fr",
+      "Location": "105",
       "Homework": "HW",
       "Attended": "true"
       }

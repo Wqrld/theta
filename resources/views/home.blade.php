@@ -32,15 +32,7 @@
           </div>
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-              <span class="info-box-icon bg-red">
-
-                <span class="fa-layers fa-fw">
-                    <i class="far fa-calendar"></i>
-                    <span class="fa-layers-text" data-fa-transform="shrink-6 down-2" style="font-weight:900">1</span>
-                  </span>
-
-
-              </span>
+              <span class="info-box-icon bg-red"><i class="fa fa-list-ol"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">new notes</span>
@@ -48,7 +40,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="box box-warning">
                       <div class="box-header with-border">
                         <h3 class="box-title">News</h3>
@@ -83,8 +75,20 @@
  <td>{{ $lesson->nr}}.</td>
   <td>{{ $lesson->Lesson}}</td>
   <td>{{ $lesson->Location}}</td>
-<td><span class="badge bg-red">{{ $lesson->Homework}}</span></td>
-  <td><span class="badge bg-red"><i class="fa fa-times"></i></span></td>
+<td>
+@if ($lesson->Homework == "HW")
+  <span class="badge bg-red">HW</span>
+@elseif ($lesson->Homework == "HW-Finished")
+<span class="badge bg-green">HW</span>
+@endif
+</td>
+  <td>
+@if ($lesson->Attended == "false")
+    <span class="badge bg-red"><i class="fa fa-times"></i></span>
+@elseif ($lesson->Attended == "true")
+<span class="badge bg-green"><i class="fa fa-check"></i></span>
+@endif
+  </td>
 </tr>
 
       @endforeach
