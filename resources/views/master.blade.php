@@ -11,9 +11,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-  <!-- Font Awesome -->
+  <!-- Font Awesome
   <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-  <!-- Ionicons -->
+-->
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>  <!-- Ionicons -->
   <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
   <!-- Theme style -->
 
@@ -88,7 +89,7 @@ desired effect
           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
+              <i class="fa fa-envelope"></i>
               <span class="label label-success">4</span>
             </a>
             <ul class="dropdown-menu">
@@ -105,7 +106,7 @@ desired effect
                       <!-- Message title and timestamp img/user2-160x160.jpg -->
                       <h4>
                         Janssen
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                        <small><i class="fa fa-clock"></i> 5 mins</small>
                       </h4>
                       <!-- The message -->
                       <p>Can you come and finish your homework?</p>
@@ -124,7 +125,7 @@ desired effect
           <li class="dropdown notifications-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
+              <i class="fa fa-bell"></i>
               <span class="label label-warning">1</span>
             </a>
             <ul class="dropdown-menu">
@@ -227,7 +228,7 @@ desired effect
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-cog"></i></a>
           </li>
         </ul>
       </div>
@@ -312,7 +313,7 @@ desired effect
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
       <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-cog"></i></a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">

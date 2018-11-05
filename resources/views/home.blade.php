@@ -22,17 +22,25 @@
   <div class="row">
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-              <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+              <span class="info-box-icon bg-aqua"><i class="fa fa-calendar"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Lessons today</span>
-                <span class="info-box-number">8</span>
+                <span class="info-box-number">{{sizeof($schedule)}}</span>
               </div>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
-              <span class="info-box-icon bg-red"><i class="ion ion-ios-gear-outline"></i></span>
+              <span class="info-box-icon bg-red">
+
+                <span class="fa-layers fa-fw">
+                    <i class="far fa-calendar"></i>
+                    <span class="fa-layers-text" data-fa-transform="shrink-6 down-2" style="font-weight:900">1</span>
+                  </span>
+
+
+              </span>
 
               <div class="info-box-content">
                 <span class="info-box-text">new notes</span>
