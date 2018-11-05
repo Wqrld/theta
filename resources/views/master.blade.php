@@ -31,6 +31,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+@php
+$hash = md5( strtolower( trim( "wereld03@gmail.com" ) ) );
+$profileurl = "https://www.gravatar.com/avatar/" . $hash
+@endphp
+
+
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -94,9 +100,9 @@ desired effect
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ $profileurl }}" class="img-circle" alt="User Image">
                       </div>
-                      <!-- Message title and timestamp -->
+                      <!-- Message title and timestamp img/user2-160x160.jpg -->
                       <h4>
                         Janssen
                         <small><i class="fa fa-clock-o"></i> 5 mins</small>
@@ -179,14 +185,14 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="{{ $profileurl }}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Luc H</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{ $profileurl }}" class="img-circle" alt="User Image">
 
                 <p>
                   Luc H
@@ -236,7 +242,7 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{ $profileurl }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Luc H</p>
