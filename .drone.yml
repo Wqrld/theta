@@ -5,7 +5,7 @@ pipeline:
     commands:
       - php -v
       - pwd
-      - touch /home/container/database.sqlite
+      - touch /drone/src/github.com/Wqrld/theta/database.sqlite
       - composer -V
       - cp .env.example .env
       - composer install --prefer-dist
