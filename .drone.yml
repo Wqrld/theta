@@ -1,0 +1,12 @@
+pipeline:
+  build:
+    image: laradock/workspace:1.8-71
+    group: laravel
+    commands:
+      - php -v
+      - composer -V
+      - cp .env.example .env
+      - composer install --prefer-dist
+      - php artisan key:generate
+      - php artisan migrate
+      - ./vendor/bin/phpunit
