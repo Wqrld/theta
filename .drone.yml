@@ -13,8 +13,11 @@ pipeline:
 services:
   mysql:
     image: mysql
-    ports:
-      - 0.0.0.0:3307:33060
+    network: host
+    networks:
+      default:
+        external:
+          name: host
     environment:
         - MYSQL_DATABASE=homestead
         - MYSQL_USER=homestead
