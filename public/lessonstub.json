@@ -1,11 +1,11 @@
 [
-  {"#": "1",
+  {"nr": "1",
     "Lesson": "English",
     "Location": "201",
     "Homework": "HW",
     "Attended": "true"
     },
-    {"#": "2",
+    {"nr": "2",
       "Lesson": "French",
       "Location": "201",
       "Homework": "HW",

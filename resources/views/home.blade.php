@@ -3,10 +3,9 @@
 
 
 @section('content')
-@php
-//echo json_encode($schedule[0]);
 
-@endphp
+
+
 <section class="content-header">
   <h1>
     Home page
@@ -70,20 +69,19 @@
         <th style="width: 10px">Attended?</th>
 
       </tr>
-      <tr class="">
-        <td>1.</td>
-        <td>English</td>
-        <td>105</td>
-<td><span class="badge bg-red">HW</span></td>
-        <td><span class="badge bg-red"><i class="fa fa-times"></i></span></td>
-      </tr>
-      <tr>
-        <td>2.</td>
-        <td>French</td>
-        <td>201</td>
-<td></td>
-        <td><span class="badge bg-success"><i class="fa fa-check-circle"></i></span></td>
-      </tr>
+
+@foreach ($schedule as $lesson)
+<tr class="">
+ <td>{{ $lesson->nr}}.</td>
+  <td>{{ $lesson->Lesson}}</td>
+  <td>{{ $lesson->Location}}</td>
+<td><span class="badge bg-red">{{ $lesson->Homework}}</span></td>
+  <td><span class="badge bg-red"><i class="fa fa-times"></i></span></td>
+</tr>
+
+      @endforeach
+
+
     </table>
   </div>
   <!-- /.box-body -->
