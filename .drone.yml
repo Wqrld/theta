@@ -10,3 +10,13 @@ pipeline:
       - php artisan key:generate
       - php artisan migrate
       - ./vendor/bin/phpunit
+services:
+  mysql:
+    image: mysql
+    ports:
+      - 3307:3306
+    environment:
+        - MYSQL_DATABASE=homestead
+        - MYSQL_USER=homestead
+        - MYSQL_PASSWORD=secret
+        - MYSQL_ROOT_PASSWORD=secret
