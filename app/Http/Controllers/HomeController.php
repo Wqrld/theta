@@ -25,7 +25,10 @@ class HomeController extends Controller
     {
 
 // pull data
-
-        return view('home');
+$schedulefile = fopen("lessonstub.json", "r") or die("Unable to open file!");
+$schedulejson = fread($schedulefile,filesize("lessonstub.json"));
+$schedule = json_decode($schedulejson, true);
+fclose($schedulefile);
+        return view('home', ['schedule' => $schedule]);
     }
 }

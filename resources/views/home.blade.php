@@ -3,14 +3,18 @@
 
 
 @section('content')
+@php
+//echo json_encode($schedule[0]);
+
+@endphp
 <section class="content-header">
   <h1>
     Home page
     <small>Today</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-    <li class="active">Here</li>
+    <li><a href="#"><i class="fa fa-dashboard"></i> schoolname</a></li>
+    <li class="active">Home</li>
   </ol>
 </section>
 
@@ -37,6 +41,18 @@
               </div>
             </div>
           </div>
+          <div class="col-md-6">
+                    <div class="box box-warning">
+                      <div class="box-header with-border">
+                        <h3 class="box-title">News</h3>
+                      </div>
+                      <div class="box-body">
+                        You can now buy tickets for the christmas party.
+                      </div>
+                    </div>
+                  </div>
+
+
 
 </div>
 <div class="box">
@@ -59,14 +75,14 @@
         <td>English</td>
         <td>105</td>
 <td><span class="badge bg-red">HW</span></td>
-        <td><span class="badge bg-red"><i class="fa fa-cross"></i></span></td>
+        <td><span class="badge bg-red"><i class="fa fa-times"></i></span></td>
       </tr>
       <tr>
         <td>2.</td>
         <td>French</td>
         <td>201</td>
 <td></td>
-        <td><span class="badge bg-success"><i class="fa fa-checkmark"></i></span></td>
+        <td><span class="badge bg-success"><i class="fa fa-check-circle"></i></span></td>
       </tr>
     </table>
   </div>
