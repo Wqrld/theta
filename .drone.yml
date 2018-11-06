@@ -5,7 +5,7 @@ pipeline:
     commands:
       - php -v
       - pwd
-      - sudo apt install net-tools
+      - apt install net-tools
       - touch /drone/src/github.com/Wqrld/theta/database.sqlite
       - composer -V
       - cp .env.example .env
