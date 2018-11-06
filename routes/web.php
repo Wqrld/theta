@@ -21,6 +21,15 @@ Route::get('/schedule', function () {
     return view('schedule');
 });
 
+Route::get('/authl', function () {
+    return view('auth.logintest');
+});
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'account'], function () {
+    Route::get('/', 'AccountController@index')->name('account');
+    Route::post('/', 'AccountController@update');
+});

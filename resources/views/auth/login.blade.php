@@ -1,71 +1,68 @@
-@extends('layouts.app')
+{{-- Pterodactyl - Panel --}}
+{{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
+
+{{-- This software is licensed under the terms of the MIT license. --}}
+{{-- https://opensource.org/licenses/MIT --}}
+@extends('auth.authlayout')
+
+@section('title')
+    Login
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<div class="row">
+    <div class="col-sm-offset-3 col-xs-offset-1 col-sm-6 col-xs-10">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Error<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-        </div>
+        @endif
+
     </div>
 </div>
+<div class="row">
+    <div class="col-sm-offset-3 col-xs-offset-1 col-sm-6 col-xs-10 pterodactyl-login-box">
+        <form id="loginForm" action="{{ route('login') }}" method="POST">
+            <div class="form-group has-feedback">
+                <div class="pterodactyl-login-input">
+                    <input type="text" name="email" id="email" class="form-control input-lg" value="{{ old('user') }}" required placeholder="E-mail adress" autofocus>
+                    <span class="fa fa-envelope form-control-feedback fa-lg"></span>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <div class="pterodactyl-login-input">
+                    <input type="password" name="password" class="form-control input-lg" required placeholder="password">
+                    <span class="fa fa-lock form-control-feedback fa-lg"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <a href=""><button type="button" class="btn pterodactyl-login-button--left"><i class="fa fa-life-ring"></i></button></a>
+                </div>
+                <div class="col-xs-offset-4 col-xs-4">
+                    {!! csrf_field() !!}
+                    <button type="submit" class="btn btn-block g-recaptcha pterodactyl-login-button--main" @if(config('recaptcha.enabled')) data-sitekey="{{ config('recaptcha.website_key') }}" data-callback='onSubmit' @endif>Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+    @parent
+    @if(config('recaptcha.enabled'))
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script>
+        function onSubmit(token) {
+            document.getElementById("loginForm").submit();
+        }
+        </script>
+     @endif
 @endsection
