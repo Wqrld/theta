@@ -17,4 +17,4 @@ pipeline:
       - sleep 5
       - netstat -lvnp
       - curl 127.0.0.1
-      - ./vendor/bin/phpunit
+      - ./vendor/bin/phpunit --verbose
