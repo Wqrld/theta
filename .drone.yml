@@ -6,6 +6,7 @@ pipeline:
       - php -v
       - pwd
       - apt install net-tools
+      - apt install curl
       - touch /drone/src/github.com/Wqrld/theta/database.sqlite
       - composer -V
       - cp .env.example .env
@@ -15,4 +16,5 @@ pipeline:
       - php artisan serve  --host=0.0.0.0 --port=80 &
       - sleep 5
       - netstat -lvnp
+      - curl 127.0.0.1
       - ./vendor/bin/phpunit
