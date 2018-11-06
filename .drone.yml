@@ -29,6 +29,6 @@ pipeline:
     image: drillster/drone-volume-cache
     rebuild: true
     mount:
-      - ./node_modules
+      - ./vendor
     volumes:
       - /tmp/cache:/cache
