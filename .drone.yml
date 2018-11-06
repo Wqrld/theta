@@ -18,6 +18,3 @@ pipeline:
       - netstat -lvnp
       - curl 127.0.0.1
       - ./vendor/bin/phpunit --verbose
-cache:
-  mount:
-    - /drone/src/github.com/Wqrld/theta/vendor
