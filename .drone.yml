@@ -36,3 +36,14 @@ pipeline:
       - ./vendor
     volumes:
       - /tmp/cache:/cache
+
+  discord:
+    image: appleboy/drone-discord
+    secrets: [ discord_webhook_id, discord_webhook_token ]
+    username: drone
+    message: |
+     {{ #success build.status }}
+       build {{ build.number }} succeeded. Good job.
+     {{ else }}
+       build {{ build.number }} failed. Fix me please.
+     {{ /success }}
