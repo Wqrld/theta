@@ -21,7 +21,7 @@ class ExampleTest extends TestCase
     echo base_path();
 
 
-    $response = file_get_contents("127.0.0.1", false);
+    $response = file_get_contents("http://127.0.0.1", false);
     $status_line = $http_response_header[0];
 
     preg_match('{HTTP\/\S*\s(\d{3})}', $status_line, $match);
