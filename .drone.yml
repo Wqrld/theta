@@ -23,7 +23,7 @@ pipeline:
     group: laravel
     commands:
       - php artisan serve  --host=0.0.0.0 --port=80 &
-      - sleep 5
+      - sleep 2
       - apt install net-tools
       - apt install curl
       - netstat -lvnp

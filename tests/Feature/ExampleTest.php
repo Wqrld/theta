@@ -19,6 +19,16 @@ class ExampleTest extends TestCase
 
     echo public_path(). "\n";
     echo base_path();
+
+
+    public function test_url($url) {
+      $data = file_get_contents("$this->API?url=$url");
+      $result = json_decode($data, true);
+      $this->assertEquals(true, $result['result']);
+      $this->assertEquals(200, $result['code']);
+    }
+    test_url("127.0.0.1")
+
       // $response = $this->get('/');
       // echo $response->dump();
 
