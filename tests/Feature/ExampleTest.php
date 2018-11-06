@@ -14,11 +14,14 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-       $response = $this->get('/');
-echo $response->dump();
 
-$response = $this->call('GET', '/');
-echo $response->dump();
+
+
+    echo public_path();
+    echo base_path();  
+  //     $response = $this->get('/');
+//echo $response->dump();
+
     /*    $response->assertStatus(500);*/
 
         $this->assertTrue(true);
