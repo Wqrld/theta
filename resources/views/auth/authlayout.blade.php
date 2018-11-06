@@ -64,16 +64,16 @@
         <script src="js/bootstrap.min.js"></script>
         <!-- AdminLTE App -->
         <script src="js/adminlte.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 
-
-    {{--    <script type="text/javascript">
+        <script type="text/javascript">
             /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
             $(function () {
-                particlesJS.load('particles-js', '{!! Theme::url('vendor/particlesjs/particles.json?t={cache-version}') !!}', function() {});
+                particlesJS.load('particles-js', '/particles.json', function() {});
             })
         </script>
-
-        @if(config('pterodactyl.lang.in_context')) {!! Theme::js('vendor/phraseapp/phraseapp.js?t={cache-version}') !!} @endif
+{{--
+        @if(config('theta.lang.in_context')) {!! Theme::js('vendor/phraseapp/phraseapp.js?t={cache-version}') !!} @endif
 
         --}}
     </body>
