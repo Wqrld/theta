@@ -1,24 +1,17 @@
 pipeline:
-  install:
+  test:
     image: laradock/workspace:1.8-71
     group: laravel
     commands:
       - php -v
       - pwd
+      - sudo apt install net-tools
       - touch /drone/src/github.com/Wqrld/theta/database.sqlite
       - composer -V
       - cp .env.example .env
       - composer install --prefer-dist
       - php artisan key:generate
       - php artisan migrate
-  run:
-    image: laradock/workspace:1.8-71
-    group: laravel
-    commands:
       - php artisan serve  --host=0.0.0.0 --port=80 &
       - netstat -lvnp
-  test:
-    image: laradock/workspace:1.8-71
-    group: laravel
-    commands:
       - ./vendor/bin/phpunit
