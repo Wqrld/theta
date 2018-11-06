@@ -15,13 +15,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
-  <!-- Theme style -->
-
 
   <link rel="stylesheet" href="{{ asset('css/AdminLTE.min.css') }}">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="{{ asset('css/skins/skin-blue.min.css') }}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,7 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <![endif]-->
 
 @php
-$hash = md5( strtolower( trim( "wereld03@gmail.com" ) ) );
+$hash = md5( strtolower( trim( $User->Email ) ) );
 $profileurl = "https://www.gravatar.com/avatar/" . $hash
 @endphp
 
@@ -245,9 +240,16 @@ desired effect
           <img src="{{ $profileurl }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Luc H</p>
+          <p>{{$User->FirstName}} {{$User->LastName}}</p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> At school</a>
+
+          @if ($User->Location == "School")
+          <a href="#"><i class="fa fa-circle text-success"></i>At school</a>
+          @elseif ($User->Location == "Home")
+<a href="#"><i class="fa fa-circle text-success"></i>Home</a>
+          @else
+<a href="#"><i class="fa fa-circle text-warning"></i>Unknown</a>
+          @endif
         </div>
       </div>
 
@@ -267,11 +269,12 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">STUDENT</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-home"></i> <span>home</span></a></li>
-        <li><a href="#"><i class="fa fa-calendar"></i> <span>schedule</span></a></li>
-        <li><a href="#"><i class="fa fa-check-circle"></i> <span>notes</span></a></li>
-        <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>attendancy</span></a></li>
-        <li><a href="#"><i class="fa fa-desktop"></i> <span>ELO</span></a></li>
+
+        <li class="{{ \Request::path() == '/' ? 'active' : '' }}"><a href="/"><i class="fa fa-home"></i> <span>home</span></a></li>
+        <li class="{{ \Request::path() == 'schedule' ? 'active' : '' }}" ><a href="/schedule"><i class="fa fa-calendar"></i> <span>schedule</span></a></li>
+        <li class="{{ \Request::path() == 'grades' ? 'active' : '' }}" ><a href="#"><i class="fa fa-check-circle"></i> <span>grades</span></a></li>
+        <li class="{{ \Request::path() == 'attendancy' ? 'active' : '' }}" ><a href="#"><i class="fa fa-graduation-cap"></i> <span>attendancy</span></a></li>
+        <li class="{{ \Request::path() == 'elo' ? 'active' : '' }}" ><a href="#"><i class="fa fa-desktop"></i> <span>ELO</span></a></li>
         <!--<li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
@@ -301,7 +304,7 @@ desired effect
   <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      <strong><i class="fa fa-fw fa-code-fork"></i></strong> {{ \Tremby\LaravelGitVersion\GitVersionHelper::getVersion() }}<br />
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2018 <a href="#">Your school</a>.</strong> All rights reserved.

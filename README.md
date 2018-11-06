@@ -2,7 +2,7 @@
 # Theta
 
 Theta is a modern schedule app for students and schools, it allows you to quickly see what lessons to go to or if any lessons have been cancelled.
-![screenshot](https://i.imgur.com/QM5kCvN.png)
+![screenshot](https://i.imgur.com/FSgj3A0.png)
 
 ## Support & Documentation
 Support can be found in our issues on github, we do not have any documentation yet

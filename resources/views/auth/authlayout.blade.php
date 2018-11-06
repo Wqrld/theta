@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="login-corner-info small">
-            <strong><i class="fa fa-fw fa-code-fork"></i></strong> 0.1<br />
+            <strong><i class="fa fa-fw fa-code-fork"></i></strong> {{ \Tremby\LaravelGitVersion\GitVersionHelper::getVersion() }}<br />
             <strong><i class="fa fa-fw fa-clock-o"></i></strong> {{ round(microtime(true) - LARAVEL_START, 3) }}s
         </div>
 

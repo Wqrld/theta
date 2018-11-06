@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ScheduleController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -38,6 +38,6 @@ $user = json_decode($userjson, false);
 fclose($userfile);
 
 
-        return view('home', ['schedule' => $schedule, 'User' => $user]);
+        return view('schedule', ['schedule' => $schedule, 'User' => $user]);
     }
 }

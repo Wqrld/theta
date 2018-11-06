@@ -17,9 +17,7 @@
 Route::get('/notes', function () {
     return view('notes');
 });
-Route::get('/schedule', function () {
-    return view('schedule');
-});
+Route::get('/schedule', 'ScheduleController@index')->name('schedule');
 
 Route::get('/authl', function () {
     return view('auth.logintest');
