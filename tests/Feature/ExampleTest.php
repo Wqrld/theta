@@ -14,9 +14,13 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-  /*      $response = $this->get('/');
+       $response = $this->get('/');
 fwrite(STDERR, print_r($response, TRUE));
-        $response->assertStatus(500);*/
+
+fwrite(STDERR, "---------------------------\n");
+$response = $this->call('GET', '/');
+fwrite(STDERR, print_r($response, TRUE));
+    /*    $response->assertStatus(500);*/
 
         $this->assertTrue(true);
     }
