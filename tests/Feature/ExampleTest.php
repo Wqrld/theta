@@ -17,7 +17,7 @@ class ExampleTest extends TestCase
 
 
 
-    echo public_path();
+    echo public_path(). "\n";
     echo base_path();  
   //     $response = $this->get('/');
 //echo $response->dump();
