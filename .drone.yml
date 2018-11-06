@@ -1,4 +1,11 @@
 pipeline:
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - ./vendor
+    volumes:
+      - /tmp/cache:/cache
   test:
     image: laradock/workspace:1.8-71
     group: laravel
@@ -18,3 +25,10 @@ pipeline:
       - netstat -lvnp
       - curl 127.0.0.1
       - ./vendor/bin/phpunit --verbose
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - ./node_modules
+    volumes:
+      - /tmp/cache:/cache

@@ -18,9 +18,9 @@ class ExampleTest extends TestCase
 
 
     echo public_path(). "\n";
-    echo base_path();  
-  //     $response = $this->get('/');
-//echo $response->dump();
+    echo base_path();
+       $response = $this->get('/');
+       echo $response->dump();
 
     /*    $response->assertStatus(500);*/
 
