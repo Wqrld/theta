@@ -21,13 +21,17 @@ class ExampleTest extends TestCase
     echo base_path();
 
 
-    public function test_url($url) {
-      $data = file_get_contents("$this->API?url=$url");
-      $result = json_decode($data, true);
-      $this->assertEquals(true, $result['result']);
-      $this->assertEquals(200, $result['code']);
-    }
-    test_url("127.0.0.1")
+    $response = file_get_contents("127.0.0.1", false);
+    $status_line = $http_response_header[0];
+
+    preg_match('{HTTP\/\S*\s(\d{3})}', $status_line, $match);
+
+    $status = $match[1];
+
+echo $status;
+      $this->assertEquals(200, $status);
+
+
 
       // $response = $this->get('/');
       // echo $response->dump();
