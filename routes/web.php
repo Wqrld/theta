@@ -14,18 +14,15 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/notes', function () {
-    return view('notes');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/grades', 'GradeController@index')->name('grades');
 Route::get('/schedule', 'ScheduleController@index')->name('schedule');
-
-Route::get('/authl', function () {
-    return view('auth.logintest');
-});
+Route::get('/schedule/{number}', 'ScheduleController@index')->name('schedule');
+Route::get('/attendancy', 'AttendancyController@index')->name('attendancy');
+Route::get('/elo', 'EloController@index')->name('elo');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'account'], function () {
     Route::get('/', 'AccountController@index')->name('account');

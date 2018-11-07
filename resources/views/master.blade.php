@@ -253,7 +253,7 @@ desired effect
         </div>
       </div>
 
-      <!-- search form (Optional) -->
+      <!-- search form (Optional)
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -262,7 +262,7 @@ desired effect
               </button>
             </span>
         </div>
-      </form>
+      </form>-->
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
@@ -272,9 +272,9 @@ desired effect
 
         <li class="{{ \Request::path() == '/' ? 'active' : '' }}"><a href="/"><i class="fa fa-home"></i> <span>home</span></a></li>
         <li class="{{ \Request::path() == 'schedule' ? 'active' : '' }}" ><a href="/schedule"><i class="fa fa-calendar"></i> <span>schedule</span></a></li>
-        <li class="{{ \Request::path() == 'grades' ? 'active' : '' }}" ><a href="#"><i class="fa fa-check-circle"></i> <span>grades</span></a></li>
-        <li class="{{ \Request::path() == 'attendancy' ? 'active' : '' }}" ><a href="#"><i class="fa fa-graduation-cap"></i> <span>attendancy</span></a></li>
-        <li class="{{ \Request::path() == 'elo' ? 'active' : '' }}" ><a href="#"><i class="fa fa-desktop"></i> <span>ELO</span></a></li>
+        <li class="{{ \Request::path() == 'grades' ? 'active' : '' }}" ><a href="/grades"><i class="fa fa-check-circle"></i> <span>grades</span></a></li>
+        <li class="{{ \Request::path() == 'attendancy' ? 'active' : '' }}" ><a href="/attendancy"><i class="fa fa-graduation-cap"></i> <span>attendancy</span></a></li>
+        <li class="{{ \Request::path() == 'elo' ? 'active' : '' }}" ><a href="/elo"><i class="fa fa-desktop"></i> <span>ELO</span></a></li>
         <!--<li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

@@ -11,7 +11,7 @@ Support can be found in our issues on github, we do not have any documentation y
 ## Credits
 This software would not be possible without the work of other open-source authors who provide tools such as:
 
-[Ace Editor](https://ace.c9.io), [AdminLTE](https://almsaeedstudio.com), [Animate.css](http://daneden.github.io/animate.css/), [AnsiUp](https://github.com/drudru/ansi_up), [Async.js](https://github.com/caolan/async),
+[Ace Editor](https://ace.c9.io), [AdminLTE](https://almsaeedstudio.com), [Animate.css](http://daneden.github.io/animate.css/), [Async.js](https://github.com/caolan/async),
 [Bootstrap](http://getbootstrap.com), [Bootstrap Notify](http://bootstrap-notify.remabledesigns.com), [Chart.js](http://www.chartjs.org), [FontAwesome](http://fontawesome.io),
 [FontAwesome Animations](https://github.com/l-lin/font-awesome-animation), [jQuery](http://jquery.com), [Laravel](https://laravel.com), [Lodash](https://lodash.com),
 [Select2](https://select2.github.io), [Socket.io](http://socket.io), [Socket.io File Upload](https://github.com/vote539/socketio-file-upload), [SweetAlert](http://t4t5.github.io/sweetalert),
