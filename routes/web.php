@@ -15,6 +15,7 @@
 //     return view('welcome');
 // });
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/grades', 'GradeController@index')->name('grades');
 Route::get('/schedule', 'ScheduleController@index')->name('schedule');
 Route::get('/schedule/{number}', 'ScheduleController@index')->name('schedule');

@@ -8,7 +8,7 @@ pipeline:
       - /tmp/cache:/cache
   install:
     image: laradock/workspace:1.8-71
-    group: laravel
+    group: install
     commands:
       - php -v
       - pwd
@@ -20,10 +20,10 @@ pipeline:
       - php artisan migrate
   test:
     image: laradock/workspace:1.8-71
-    group: laravel
+    group: test
     commands:
       - php artisan serve  --host=0.0.0.0 --port=80 &
-      - sleep 5
+      - sleep 2
       - apt install net-tools
       - apt install curl
       - netstat -lvnp
