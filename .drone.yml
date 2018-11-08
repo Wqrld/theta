@@ -1,0 +1,44 @@
+pipeline:
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - ./vendor
+    volumes:
+      - /tmp/cache:/cache
+  install:
+    image: laradock/workspace:1.8-71
+    group: install
+    commands:
+      - php -v
+      - pwd
+      - touch /drone/src/github.com/Wqrld/theta/database.sqlite
+      - composer -V
+      - cp .env.example .env
+      - composer install --prefer-dist
+      - php artisan key:generate
+      - php artisan migrate
+  test:
+    image: laradock/workspace:1.8-71
+    group: test
+    commands:
+      - php artisan serve  --host=0.0.0.0 --port=80 &
+      - sleep 2
+      - apt install net-tools
+      - apt install curl
+      - netstat -lvnp
+      - curl 127.0.0.1
+      - ./vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
+
+  uploadcob:
+    image: ubuntu
+    group: upload
+    commands:
+      - bash <(curl -s https://codecov.io/bash)
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - ./vendor
+    volumes:
+      - /tmp/cache:/cache
