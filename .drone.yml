@@ -26,6 +26,7 @@ pipeline:
       - sleep 2
       - netstat -lvnp
       - curl 127.0.0.1
+      - php -m
       - ./vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
       - /bin/bash codecov.sh
   rebuild-cache:
