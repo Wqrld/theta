@@ -7,7 +7,7 @@ pipeline:
     volumes:
       - /tmp/cache:/cache
   install:
-    image: laradock/workspace:1.8-71
+    image: ayoungcoder/betterphp
     group: install
     commands:
       - php -v
@@ -19,13 +19,11 @@ pipeline:
       - php artisan key:generate
       - php artisan migrate
   test:
-    image: laradock/workspace:1.8-71
+    image: ayoungcoder/betterphp
     group: test
     commands:
       - php artisan serve  --host=0.0.0.0 --port=80 &
       - sleep 2
-      - apt install net-tools
-      - apt install curl
       - netstat -lvnp
       - curl 127.0.0.1
       - ./vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
