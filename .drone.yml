@@ -29,13 +29,6 @@ pipeline:
       - netstat -lvnp
       - curl 127.0.0.1
       - ./vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
-
-  uploadcob:
-    image: ubuntu:16.04
-    group: upload
-    commands:
-      - apt update
-      - apt install -y curl
       - /bin/bash codecov.sh
   rebuild-cache:
     image: drillster/drone-volume-cache
