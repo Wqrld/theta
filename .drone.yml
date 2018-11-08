@@ -31,9 +31,11 @@ pipeline:
       - ./vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
 
   uploadcob:
-    image: ubuntu
+    image: ubuntu:16.04
     group: upload
     commands:
+      - apt update
+      - apt install -y curl
       - bash <(curl -s https://codecov.io/bash)
   rebuild-cache:
     image: drillster/drone-volume-cache
