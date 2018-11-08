@@ -28,7 +28,8 @@ pipeline:
       - apt install curl
       - netstat -lvnp
       - curl 127.0.0.1
-      - ./vendor/bin/phpunit --verbose
+      - ./vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
+      - bash <(curl -s https://codecov.io/bash)
   rebuild-cache:
     image: drillster/drone-volume-cache
     rebuild: true
