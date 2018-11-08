@@ -8,12 +8,12 @@
 
 <section class="content-header">
   <h1>
-    Grades
+    ELO
     <small>Today</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> schoolname</a></li>
-    <li class="active">Grades</li>
+    <li class="active">ELO</li>
   </ol>
 </section>
 
@@ -21,7 +21,7 @@
 <section class="content container-fluid">
 <div class="box">
   <div class="box-header with-border">
-    <h3 class="box-title">Lessons</h3>
+    <h3 class="box-title">Documents and links</h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body">
@@ -30,8 +30,7 @@
         <th style="width: 10px">#</th>
         <th>Lesson</th>
         <th>Location</th>
-        <th style="width: 20px">Homework</th>
-        <th style="width: 10px">Attended?</th>
+
 
       </tr>
 
@@ -39,21 +38,7 @@
 <tr class="">
  <td>{{ $lesson->nr}}.</td>
   <td>{{ $lesson->Lesson}}</td>
-  <td>{{ $lesson->Location}}</td>
-<td>
-@if ($lesson->Homework == "HW")
-  <span class="badge bg-red">HW</span>
-@elseif ($lesson->Homework == "HW-Finished")
-<span class="badge bg-green">HW</span>
-@endif
-</td>
-  <td>
-@if ($lesson->Attended == "false")
-    <span class="badge bg-red"><i class="fa fa-times"></i></span>
-@elseif ($lesson->Attended == "true")
-<span class="badge bg-green"><i class="fa fa-check"></i></span>
-@endif
-  </td>
+  <td>Some url</td>
 </tr>
 
       @endforeach
@@ -62,11 +47,7 @@
     </table>
   </div>
   <!-- /.box-body -->
-  <div class="box-footer clearfix">
-    <ul class="pagination pagination-sm no-margin pull-right">
-      <li><a href="#">tomorrow</a></li>
-    </ul>
-  </div>
+
 </div>
 
 

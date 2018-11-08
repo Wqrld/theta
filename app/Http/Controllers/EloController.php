@@ -38,6 +38,6 @@ $user = json_decode($userjson, false);
 fclose($userfile);
 
 
-        return view('grades', ['schedule' => $schedule, 'User' => $user]);
+        return view('elo', ['schedule' => $schedule, 'User' => $user]);
     }
 }
