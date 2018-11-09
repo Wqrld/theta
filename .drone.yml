@@ -6,14 +6,20 @@ pipeline:
       - ./vendor
     volumes:
       - /tmp/cache:/cache
+
+  versions:
+    image: ayoungcoder/betterphp
+    group: versions
+    commands:
+      - php -v
+      - pwd
+      - composer -V
+      - php -m
   install:
     image: ayoungcoder/betterphp
     group: install
     commands:
-      - php -v
-      - pwd
       - touch /drone/src/github.com/Wqrld/theta/database.sqlite
-      - composer -V
       - cp .env.example .env
       - composer install --prefer-dist
       - php artisan key:generate
@@ -24,10 +30,8 @@ pipeline:
     secrets: [ CODECOV_TOKEN ]
     commands:
       - php artisan serve  --host=0.0.0.0 --port=80 &
-      - sleep 2
+      - sleep 1
       - netstat -lvnp
-      - curl 127.0.0.1
-      - php -m
       - ./vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
       - /bin/bash codecov.sh
   rebuild-cache:
