@@ -1,5 +1,7 @@
 [![codecov](https://codecov.io/gh/Wqrld/theta/branch/master/graph/badge.svg)](https://codecov.io/gh/Wqrld/theta)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3bdd0f7540d4a2aa83ee8bcdecc7806)](https://www.codacy.com/app/Wqrld/theta?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Wqrld/theta&amp;utm_campaign=Badge_Grade)
+[![ci](https://ci.imluc.ga/api/badges/Wqrld/theta/status.svg)](https://ci.imluc.ga/Wqrld/theta)
+
 
 # Theta
 
