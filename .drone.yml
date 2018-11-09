@@ -21,8 +21,7 @@ pipeline:
   test:
     image: ayoungcoder/betterphp
     group: test
-    environment:
-      CODECOV_TOKEN: $$CODECOV_TOKEN
+    secrets: [ CODECOV_TOKEN ]
     commands:
       - php artisan serve  --host=0.0.0.0 --port=80 &
       - sleep 2
