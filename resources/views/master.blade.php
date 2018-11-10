@@ -91,6 +91,7 @@ desired effect
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
+
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">

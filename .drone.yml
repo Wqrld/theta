@@ -9,7 +9,7 @@ pipeline:
 
   versions:
     image: ayoungcoder/betterphp
-    group: versions
+    group: install
     commands:
       - php -v
       - pwd

@@ -35,7 +35,7 @@
               <span class="info-box-icon bg-red"><i class="fa fa-list-ol"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">new notes</span>
+                <span class="info-box-text">new grades</span>
                 <span class="info-box-number">1</span>
               </div>
             </div>

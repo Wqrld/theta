@@ -30,6 +30,8 @@ $schedulejson = fread($schedulefile,filesize("lessonstub.json"));
 $schedule = json_decode($schedulejson, false);
 
 fclose($schedulefile);
+//$auser = \App\User::find(1);
+
 
 $userfile = fopen(public_path() . "/userstub.json" , "r") or die("Unable to open file!");
 $userjson = fread($userfile,filesize("lessonstub.json"));
